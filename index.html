@@ -1,8 +1,151 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- JS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
 </head>
+
 <body>
-<h1>Hi there!</h1>
+
+	<div class="top-bar">
+		<header>
+			<h1><a>Citi Velocity</a></h1>
+			<h2>Internal download portal</h2>
+		</header>
+	</div>
+
+<div class="frame">
+	<div class="frame-head">
+		<img src="img/velicity-logo.png">
+	</div>
+
+	<div class="main">
+		<h2 class="main-title">Internal Download Portal</h2>
+
+		<div class="sidebar">
+			<h2 class="contents-title">Contents</h2>
+			<ol class="contents-list">
+				<li><a href="">Velocity 2.0</a></li>
+				<li><a href="">Auto Upgrade Admin Client</a></li>
+				<li><a href="">Backbone Admin Client</a></li>
+			</ol>
+		</div>
+		<div class="downloads-list">
+
+			<div class="product">
+				<h2>Velocity</h2>
+
+				<h3>Production</h3>
+				<ul>
+					<li>
+						<h4>Internal Prod</h4>
+						<div class="download-frame">
+							<div id="download-frame_empty">
+								<span>Nothing here</span>
+								<p>No attempt to get this record was made. <br />
+								Try refreshing the page.</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h4>Pilot</h4>
+						<div class="download-frame">
+							<div id="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h4>Beta</h4>
+						<div class="download-frame">
+							<div id="download-frame_Error">
+								<span>Error:</span>
+								<p>Unable to load record.</p>
+							</div>
+						</div>						
+					</li>
+				</ul>
+
+				<h3>UAT</h3>
+				<ul>
+					<li>
+						<h4>UAT</h4>
+						<div class="download-frame">
+
+							<h4 class="download-title">Velocity 2.0 UAT</h4>
+							<dl class="download-details">							
+								<dt>Version:</dt>
+								<dd>2.0.21010.0</dd>
+
+								<dt>support:</dt>
+								<dd>support.address@citi.com <a href="mailto:#"></a></dd>
+
+								<dt>Download:</dt>
+								<dd>
+									<a href="download#"  class="download-btn">
+										<span>Installer</span>
+										<div class="download-btn-icon icon-exe"></div>
+									</a>
+								</dd>
+								<dd>
+									<a href="download#" class="download-btn">
+										<span>Zip</span>
+										<div class="download-btn-icon icon-zip"></div>
+									</a>
+								</dd>							
+							</dl>
+
+						</div>
+					</li>
+
+					<li><h4>UAT Prod Patch</h4></li>
+					<li><h4>UAT 2.0.20</h4></li>
+				</ul>
+
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+
+	<div class="frame-foot"></div>
+
+</div>
+	<div id="accordion">
+	  <h4 class="accordion-toggle">Accordion 1</h4>
+	  <div class="accordion-content open">
+	    <p>Cras malesuada ultrices augue molestie risus.</p>
+	  </div>
+	  <h4 class="accordion-toggle">Accordion 2</h4>
+	  <div class="accordion-content">
+	    <p>Lorem ipsum dolor sit amet mauris eu turpis.</p>
+	  </div>
+	  <h4 class="accordion-toggle">Accordion 3</h4>
+	  <div class="accordion-content">
+	    <p>Vivamus facilisisnibh scelerisque laoreet.</p>
+	  </div>
+	</div>
+
 </body>
+
+	<script type="text/javascript">
+	  $(document).ready(function($) {
+	    $('#accordion').find('.accordion-toggle').click(function(){
+
+	      //Expand or collapse this panel
+	      $(this).next().addClass( "open" );
+
+	      //Hide the other panels
+	      $(".accordion-content").not($(this).next()).removeClass( "open" );
+
+	    });
+	  });
+	</script>
+
 </html>
