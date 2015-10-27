@@ -1,0 +1,54 @@
+
+c:\git\v-dl-portal>browser-sync start --server --files "css/*.css"
+[BS] Access URLs:
+ ---------------------------------------
+       Local: http://localhost:3000
+    External: http://169.186.102.53:3000
+ ---------------------------------------
+          UI: http://localhost:3001
+ UI External: http://169.186.102.53:3001
+ ---------------------------------------
+[BS] Serving files from: ./
+[BS] Watching files...
+[BS] File changed: css\main.css
+
+
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32>gem install --http-proxy http://euwebproxy.wlb.eur.nsroot.ne
+t:80/ sass
+Fetching: sass-3.4.19.gem (100%)
+Successfully installed sass-3.4.19
+Parsing documentation for sass-3.4.19
+Installing ri documentation for sass-3.4.19
+Done installing documentation for sass after 4 seconds
+1 gem installed
+
+C:\Windows\system32>cd..
+
+C:\Windows>cd..
+
+C:\>cd git
+
+C:\git>cd v-dl-portal
+
+C:\git\v-dl-portal>sass
+
+Interrupt:
+  Use --trace for backtrace.
+Terminate batch job (Y/N)? y
+
+C:\git\v-dl-portal>sass --watch sass/main.scss css/main.css
+File css/main.css is a CSS file.
+    Did you mean: sass --watch sass/main.scss:css/main.css
+  Use --trace for backtrace.
+
+C:\git\v-dl-portal>sass --watch sass/main.scss:css/main.css
+>>> Sass is watching for changes. Press Ctrl-C to stop.
+      write css/main.css
+      write css/main.css.map
+>>> Change detected to: sass/main.scss
+      write css/main.css
+      write css/main.css.map
