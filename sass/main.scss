@@ -12,11 +12,20 @@
 * {
 	@include css3-prefix (box-sizing, border-box);
 }
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
 
+.cf:after {
+    clear: both;
+}
 html, body {
 	margin: 0;
 	padding: 0;
 	font-family: "Interstate", Tahoma, Verdana, Segoe, sans-serif;
+	background-color: #390b0b;
 
 }
 /*body:before {
@@ -30,7 +39,65 @@ html, body {
 	background-color: blue;
 
 }*/
+.top-bar {
+	display:none;
+}
+.frame {
+	width: 100%;
+	max-width: 610px;
+	margin: 0px auto;
+	border-style: solid;
+	border-width: 1px;
+	@include css3-prefix (border-radius, 2px);
+	border-color: #6a6a6a;
+	background-color: #ffffff;
+	@include css3-prefix (box-shadow, 0px 5px 40px 0px rgba(0,0,0,0.45));
+	overflow: hidden;
+}
+.frame-head {
+	background-color: #e6e6e6;
+	text-align: center;
+	padding: 40px 0px 30px 0px;
+	border-bottom: 1px solid #6a6a6a;
 
+}
+.frame-body {
+	padding: 0px 20px;
+}
+.body-title {
+	font-size: 24px;
+	margin: 0.8em 0em 0.4em 0em;
+	color: #b0b0b0;
+}
+.sidebar {
+	width: 100%;
+
+}
+.downloads-list {
+	width: 100%;
+
+}
+.contents-title {
+	font-size: 18px;
+	color: #6a6a6a;
+}
+.contents-list {
+	list-style:none;
+	margin: 0.4em 0;
+	padding:0;
+}
+.contents-list li {
+	font-size: 12px;
+	margin: 0.4em 0;
+	padding: 0;
+}
+
+.product h2 {
+	font-size: 28px;
+	border-bottom: 1px solid;
+	padding-bottom: 4px;
+	color: #404041;
+}
 .download-label {
 	cursor: pointer; 
 	color: blue;
@@ -38,14 +105,51 @@ html, body {
 }
 
 .download-frame {
-	
 	@include css3-prefix (transition, all 0.2s ease-out);
 	height: 0px;
 	overflow: hidden;
-
 }
-
 .download-frame.open {
 	display: block;
 	height: 200px;
+}
+
+@media screen and (min-width: 610px) {
+	.top-bar {
+		display:block;
+		height:50px;
+		line-height: 50px;
+		background-color: #000000;
+		color: #ffffff;
+
+	}
+	.top-bar header {
+		width: 100%;
+		max-width: 870px;
+		padding: 0 24px;
+
+	}
+	.top-bar header h1 {
+		display: inline;
+		font-size: 14px;
+
+	}
+	.top-bar header h2 {
+		display: inline;
+		font-size: 14px;
+		font-weight: lighter;
+	}
+	.frame {
+		margin: 100px auto;
+	}
+	.sidebar {
+		width: 33%;
+		float: left;
+		padding-right: 20px;
+	}
+	.downloads-list {
+		width: 67%;
+		float: left;
+	}
+
 }
