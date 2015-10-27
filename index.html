@@ -33,7 +33,7 @@
 				<li><a href="">Backbone Admin Client</a></li>
 			</ol>
 		</div>
-		<div class="downloads-list">
+		<div id="accordion" class="downloads-list">
 
 			<div class="product">
 				<h2>Velocity</h2>
@@ -41,9 +41,9 @@
 				<h3>Production</h3>
 				<ul>
 					<li>
-						<h4>Internal Prod</h4>
-						<div class="download-frame">
-							<div id="download-frame_empty">
+						<h4 class="accordion-toggle download-label">Internal Prod</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_empty">
 								<span>Nothing here</span>
 								<p>No attempt to get this record was made. <br />
 								Try refreshing the page.</p>
@@ -51,17 +51,17 @@
 						</div>
 					</li>
 					<li>
-						<h4>Pilot</h4>
-						<div class="download-frame">
-							<div id="download-frame_loading">
+						<h4 class="accordion-toggle download-label">Pilot</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
 								<span>loading...</span>
 							</div>
 						</div>
 					</li>
 					<li>
-						<h4>Beta</h4>
-						<div class="download-frame">
-							<div id="download-frame_Error">
+						<h4 class="accordion-toggle download-label">Beta</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_error">
 								<span>Error:</span>
 								<p>Unable to load record.</p>
 							</div>
@@ -72,8 +72,8 @@
 				<h3>UAT</h3>
 				<ul>
 					<li>
-						<h4>UAT</h4>
-						<div class="download-frame">
+						<h4 class="accordion-toggle download-label">UAT</h4>
+						<div class="accordion-content download-frame open">
 
 							<h4 class="download-title">Velocity 2.0 UAT</h4>
 							<dl class="download-details">							
@@ -101,12 +101,195 @@
 						</div>
 					</li>
 
-					<li><h4>UAT Prod Patch</h4></li>
-					<li><h4>UAT 2.0.20</h4></li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT Prod Patch</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.20</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.19</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.18</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.17</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.16</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.14</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+
 				</ul>
 
 
 			</div>
+
+<div class="product">
+				<h2>Velocity</h2>
+
+				<h3>Production</h3>
+				<ul>
+					<li>
+						<h4 class="accordion-toggle download-label">Internal Prod</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_empty">
+								<span>Nothing here</span>
+								<p>No attempt to get this record was made. <br />
+								Try refreshing the page.</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h4 class="accordion-toggle download-label">Pilot</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<h4 class="accordion-toggle download-label">Beta</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_error">
+								<span>Error:</span>
+								<p>Unable to load record.</p>
+							</div>
+						</div>						
+					</li>
+				</ul>
+
+				<h3>UAT</h3>
+				<ul>
+					<li>
+						<h4 class="accordion-toggle download-label">UAT</h4>
+						<div class="accordion-content download-frame open">
+
+							<h4 class="download-title">Velocity 2.0 UAT</h4>
+							<dl class="download-details">							
+								<dt>Version:</dt>
+								<dd>2.0.21010.0</dd>
+
+								<dt>support:</dt>
+								<dd>support.address@citi.com <a href="mailto:#"></a></dd>
+
+								<dt>Download:</dt>
+								<dd>
+									<a href="download#"  class="download-btn">
+										<span>Installer</span>
+										<div class="download-btn-icon icon-exe"></div>
+									</a>
+								</dd>
+								<dd>
+									<a href="download#" class="download-btn">
+										<span>Zip</span>
+										<div class="download-btn-icon icon-zip"></div>
+									</a>
+								</dd>							
+							</dl>
+
+						</div>
+					</li>
+
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT Prod Patch</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.20</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.19</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.18</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.17</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.16</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+					<li>	
+						<h4 class="accordion-toggle download-label">Velocity UAT 2.0.14</h4>
+						<div class="accordion-content download-frame">
+							<div class="download-frame_loading">
+								<span>loading...</span>
+							</div>
+						</div>	
+					</li>
+
+				</ul>
+
+
+			</div>			
 
 
 
@@ -117,35 +300,21 @@
 	<div class="frame-foot"></div>
 
 </div>
-	<div id="accordion">
-	  <h4 class="accordion-toggle">Accordion 1</h4>
-	  <div class="accordion-content open">
-	    <p>Cras malesuada ultrices augue molestie risus.</p>
-	  </div>
-	  <h4 class="accordion-toggle">Accordion 2</h4>
-	  <div class="accordion-content">
-	    <p>Lorem ipsum dolor sit amet mauris eu turpis.</p>
-	  </div>
-	  <h4 class="accordion-toggle">Accordion 3</h4>
-	  <div class="accordion-content">
-	    <p>Vivamus facilisisnibh scelerisque laoreet.</p>
-	  </div>
-	</div>
+
 
 </body>
 
 	<script type="text/javascript">
-	  $(document).ready(function($) {
-	    $('#accordion').find('.accordion-toggle').click(function(){
+	  	$(document).ready(function($) {
+	    	$("#accordion").find(".accordion-toggle").click(function(){
 
-	      //Expand or collapse this panel
-	      $(this).next().addClass( "open" );
+	      		//Expand or collapse this panel
+	    		$(this).next().addClass( "open" );
 
-	      //Hide the other panels
-	      $(".accordion-content").not($(this).next()).removeClass( "open" );
+	    		$(".accordion-content").not($(this).next()).removeClass( "open" );
 
-	    });
-	  });
+	  		});
+		});
 	</script>
 
 </html>

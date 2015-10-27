@@ -1,9 +1,3 @@
-@mixin transition($animation) {
-  -webkit-transition: $animation;
-     -moz-transition: $animation;
-      -ms-transition: $animation;
-          transition: $animation;
-}
 @mixin css3-prefix($property, $value) {
   -webkit-#{$property}: #{$value};
    -khtml-#{$property}: #{$value};
@@ -12,6 +6,9 @@
        -o-#{$property}: #{$value};
           #{$property}: #{$value};
 }
+
+
+
 * {
 	@include css3-prefix (box-sizing, border-box);
 }
@@ -34,21 +31,21 @@ html, body {
 
 }*/
 
-.accordion-toggle {
+.download-label {
 	cursor: pointer; 
 	color: blue;
 	margin: 0.4em 0em 0.8em 0em;
 }
 
-.accordion-content {
+.download-frame {
 	
-	@include css3-prefix (transition, all 0.2s ease);
+	@include css3-prefix (transition, all 0.2s ease-out);
 	height: 0px;
 	overflow: hidden;
 
 }
 
-.accordion-content.open {
+.download-frame.open {
 	display: block;
 	height: 200px;
 }

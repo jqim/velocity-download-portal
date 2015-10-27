@@ -22,22 +22,22 @@ html, body {
 	background-color: blue;
 
 }*/
-.accordion-toggle {
+.download-label {
   cursor: pointer;
   color: blue;
   margin: 0.4em 0em 0.8em 0em; }
 
-.accordion-content {
-  -webkit-transition: all 0.2s ease;
-  -khtml-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+.download-frame {
+  -webkit-transition: all 0.2s ease-out;
+  -khtml-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   height: 0px;
   overflow: hidden; }
 
-.accordion-content.open {
+.download-frame.open {
   display: block;
   height: 200px; }
 
