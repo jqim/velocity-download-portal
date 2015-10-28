@@ -7,7 +7,7 @@
           #{$property}: #{$value};
 }
 
-
+$frame-width: 610px;
 
 * {
 	@include css3-prefix (box-sizing, border-box);
@@ -28,23 +28,50 @@ html, body {
 	background-color: #390b0b;
 
 }
-/*body:before {
-	content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: block;
-	width: 320px;
-	height: 480px;
-	background-color: blue;
+// body:before {
+// 	content: '';
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	display: block;
+// 	width: 320px;
+// 	height: 480px;
+// 	background-color: blue;
 
-}*/
+// }
 .top-bar {
 	display:none;
+	@media screen and (min-width: $frame-width) {
+	
+		display:block;
+		height:50px;
+		line-height: 50px;
+		background-color: #000000;
+		color: #ffffff;
+
+		header {
+			width: 100%;
+			max-width: 870px;
+			padding: 0 24px;
+
+			h1 {
+				display: inline;
+				font-size: 14px;
+			}
+
+			h2 {
+				display: inline;
+				font-size: 14px;
+				font-weight: lighter;
+			}			
+		}
+
+	}
 }
+
 .frame {
 	width: 100%;
-	max-width: 610px;
+	max-width: $frame-width;
 	margin: 0px auto;
 	border-style: solid;
 	border-width: 1px;
@@ -53,103 +80,193 @@ html, body {
 	background-color: #ffffff;
 	@include css3-prefix (box-shadow, 0px 5px 40px 0px rgba(0,0,0,0.45));
 	overflow: hidden;
+
+	@media screen and (min-width: $frame-width) {
+		margin: 100px auto;
+	}
+
 }
+
 .frame-head {
 	background-color: #e6e6e6;
 	text-align: center;
 	padding: 40px 0px 30px 0px;
 	border-bottom: 1px solid #6a6a6a;
-
 }
+
 .frame-body {
 	padding: 0px 20px;
 }
+
 .body-title {
 	font-size: 24px;
 	margin: 0.8em 0em 0.4em 0em;
 	color: #b0b0b0;
 }
+
 .sidebar {
 	width: 100%;
 
+	@media screen and (min-width: $frame-width) {
+		width: 33%;
+		float: left;
+		padding-right: 20px;
+	}
+
 }
+
 .downloads-list {
 	width: 100%;
 
+	@media screen and (min-width: $frame-width) {
+		width: 67%;
+		float: left;
+	}
+
 }
+
 .contents-title {
 	font-size: 18px;
 	color: #6a6a6a;
 }
+
 .contents-list {
 	list-style:none;
 	margin: 0.4em 0;
-	padding:0;
+	padding: 0;
 }
+
 .contents-list li {
 	font-size: 12px;
 	margin: 0.4em 0;
 	padding: 0;
 }
 
-.product h2 {
+.product {
+
+	h2 {
 	font-size: 28px;
 	border-bottom: 1px solid;
 	padding-bottom: 4px;
 	color: #404041;
+	}
+	h3 {
+		font-size: 12px;
+		padding: 0.1em 0.8em;
+		color: #ffffff;
+		background-color: #bcbdc0;
+	}
+	ul {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		li {
+			margin: 0px;
+			padding: 0px;
+		}
+	}
 }
+ 
 .download-label {
-	cursor: pointer; 
-	color: blue;
+	font-size: 11px;
+	cursor: pointer;
+	text-transform: uppercase; 
+	color: #231f20;
 	margin: 0.4em 0em 0.8em 0em;
+
 }
 
 .download-frame {
-	@include css3-prefix (transition, all 0.2s ease-out);
+	@include css3-prefix (transition, height 0.2s ease-out);
 	height: 0px;
 	overflow: hidden;
 }
 .download-frame.open {
 	display: block;
 	height: 200px;
+	padding: 0px 20px;
+	border-style: solid;
+	border-width: 1px;
+	@include css3-prefix (border-radius, 2px);
+	border-color: #d7d7d7;
+	background-color: #ededed;
 }
 
-@media screen and (min-width: 610px) {
-	.top-bar {
-		display:block;
-		height:50px;
-		line-height: 50px;
-		background-color: #000000;
-		color: #ffffff;
-
+.download_empty {
+	margin-top: 58px;
+	text-align: center;
+	span {
+		font-size: 18px;
 	}
-	.top-bar header {
-		width: 100%;
-		max-width: 870px;
-		padding: 0 24px;
-
-	}
-	.top-bar header h1 {
-		display: inline;
-		font-size: 14px;
-
-	}
-	.top-bar header h2 {
-		display: inline;
+	p {
 		font-size: 14px;
 		font-weight: lighter;
 	}
-	.frame {
-		margin: 100px auto;
-	}
-	.sidebar {
-		width: 33%;
-		float: left;
-		padding-right: 20px;
-	}
-	.downloads-list {
-		width: 67%;
-		float: left;
+
+}
+.download_loading {
+	margin-top: 85px;
+	text-align: center;
+	span {
+		font-size: 18px;
 	}
 
+}
+.download_error {
+	margin-top: 58px;
+	text-align: center;
+	span {
+		font-size: 18px;
+		color: #c21d1d;
+	}
+	p {
+		font-size: 18px;
+		font-weight: lighter;
+	}
+
+}
+.download_ideal {
+
+}
+.download-title {
+	font-size: 20px;
+	margin: 0.8em -0.2em;
+	color: #1d1d1d;
+}
+.download-details {
+	dt {
+		font-size: 10px;
+		text-transform: uppercase;
+		color: #626262;
+		clear: both;
+	}
+	dd {
+		font-size: 14px;
+		margin: 0px 0px 0.6em 0px;
+		color: #1d1d1d;
+		float: left;
+	}
+}
+.download-btn {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	padding: 0px 18px;
+	margin: 0px 22px 0px 0px;
+	text-decoration: none;
+	border-style: solid;
+	border-width: 0px 0px 2px 0px;
+	border-color: #000000;
+		@include css3-prefix (border-radius, 4px);
+	background-color: #363636;
+	color: #e4e4e4;
+
+}
+.download-btn-icon {
+	float: right;
+	width: 22px;
+	height: 26px;
+	margin: 7px -7px 0px 14px;
+	background-color: #e4e4e4;
 }
