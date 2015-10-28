@@ -7,9 +7,11 @@
           #{$property}: #{$value};
 }
 
+$break-small: 400px;
 $frame-width: 610px;
 
 * {
+
 	@include css3-prefix (box-sizing, border-box);
 }
 .cf:before,
@@ -34,7 +36,7 @@ html, body {
 // 	top: 0;
 // 	left: 0;
 // 	display: block;
-// 	width: 320px;
+// 	width: $break-small;
 // 	height: 480px;
 // 	background-color: blue;
 
@@ -88,10 +90,19 @@ html, body {
 }
 
 .frame-head {
+
 	background-color: #e6e6e6;
 	text-align: center;
-	padding: 40px 0px 30px 0px;
+	padding: 20px 0px 15px 0px;
 	border-bottom: 1px solid #6a6a6a;
+	img {
+		max-width:330px;
+		width: 80%;
+	}
+	@media screen and (min-width: $break-small) {
+		padding: 40px 0px 30px 0px;
+
+	}
 }
 
 .frame-body {
@@ -151,7 +162,8 @@ html, body {
 	color: #404041;
 	}
 	h3 {
-		font-size: 12px;
+		font-size: 14px;
+		letter-spacing: 0.04em;
 		padding: 0.1em 0.8em;
 		color: #ffffff;
 		background-color: #bcbdc0;
@@ -173,7 +185,20 @@ html, body {
 	text-transform: uppercase; 
 	color: #231f20;
 	margin: 0.4em 0em 0.8em 0em;
-
+	&:before {
+		content: "";
+		display: block;
+		float: left;
+		height: 7px;
+		width: 7px;
+		margin: 4px 6px 0px 0px;
+		background-image:url('../img/accordion-sprite.png');
+		background-repeat: none;
+		background-position: 0px 0px;
+	}
+	&.open:before {
+		background-position: -7px 0px;
+	}
 }
 
 .download-frame {
@@ -191,6 +216,7 @@ html, body {
 	border-color: #d7d7d7;
 	background-color: #ededed;
 }
+
 
 .download_empty {
 	margin-top: 58px;
@@ -229,9 +255,13 @@ html, body {
 
 }
 .download-title {
-	font-size: 20px;
+	font-size: 16px;
 	margin: 0.8em -0.2em;
 	color: #1d1d1d;
+
+	@media screen and (min-width: $break-small) {
+		font-size: 20px;
+	}
 }
 .download-details {
 	dt {
@@ -247,26 +277,100 @@ html, body {
 		float: left;
 	}
 }
-.download-btn {
-	display: block;
-	height: 40px;
-	line-height: 40px;
-	font-size: 18px;
-	padding: 0px 18px;
-	margin: 0px 22px 0px 0px;
-	text-decoration: none;
-	border-style: solid;
-	border-width: 0px 0px 2px 0px;
-	border-color: #000000;
-		@include css3-prefix (border-radius, 4px);
-	background-color: #363636;
-	color: #e4e4e4;
 
+.mail-icon {
+	display: block;
+	margin: 0.4em 0em;
+	font-size: 14px;
+
+	@media screen and (min-width: $break-small) {
+		position: relative;
+		float: right;
+		margin: 0.6em 0em;
+		width: 36px;
+		height: 19px;
+		margin: 0px 0px 0px 10px;
+		text-indent: -999px;
+		@include css3-prefix (border-radius, 4px);
+		background-color: transparent;
+		transition: background-color 0.2s ease;
+		&:hover {
+			background-color: #1a1a1a;
+			color: green;
+			&:after {
+				background-position: 0px 10px;
+			}
+		}
+		&:after {
+		content: ' ';
+		position: absolute;
+		top: 4px;
+		left: 10px;
+		width: 22px;
+		height: 10px;
+		background-image: url('../img/mail-sprite.png');
+		background-position: 0px 0px;
+		}
+
+	}
+}
+
+.download-btn {
+	margin: 0px 22px 0px 0px;
+	display: block;
+	font-size: 18px;
+	@media screen and (min-width: $break-small) {
+
+		height: 40px;
+		line-height: 40px;
+
+		padding: 0px 18px;
+		
+		text-decoration: none;
+		border-style: solid;
+		border-width: 0px 0px 2px 0px;
+		border-color: #000000;
+		@include css3-prefix (border-radius, 4px);
+		background-color: #363636;
+		color: #e4e4e4;
+		clear: both;
+		transition: background-color 0.2s ease;
+
+		span {
+			float: left;
+		}
+		&:hover {
+			color: #ffffff;
+			background-color: #000000;
+			> div {
+				background-position-y: 0px;
+			}
+		}
+	}	
 }
 .download-btn-icon {
-	float: right;
-	width: 22px;
-	height: 26px;
-	margin: 7px -7px 0px 14px;
-	background-color: #e4e4e4;
+	@media screen and (min-width: $break-small) {
+		float: right;
+		width: 26px;
+		height: 22px;
+		margin: 8px -7px 0px 14px;
+		background-image: url('../img/dl-icon-sprite.png');
+		background-repeat: no-repeat;
+		transition: background-position 0.3s ease-out;
+		&.icon-exe {
+			background-position-x: -26px;
+	    	background-position-y: -24px;
+		}
+		&.icon-zip {
+			background-position-x: 0px;
+	    	background-position-y: -24px;
+		}
+	}
+
+}
+.frame-foot {
+	font-size: 10px;
+	margin-top: 4em;
+	padding: 1em 2em;
+	text-align: right;
 }

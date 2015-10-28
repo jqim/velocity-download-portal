@@ -1,5 +1,6 @@
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- JS -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 
@@ -28,7 +29,7 @@
 		<div class="sidebar">
 			<h2 class="contents-title">Contents</h2>
 			<ol class="contents-list">
-				<li><a href="">Velocity 2.0</a></li>
+				<li><a href="#velocity2.0">Velocity 2.0</a></li>
 				<li><a href="">Auto Upgrade Admin Client</a></li>
 				<li><a href="">Backbone Admin Client</a></li>
 			</ol>
@@ -36,7 +37,7 @@
 		<div id="accordion" class="downloads-list">
 
 			<div class="product">
-				<h2>Velocity</h2>
+				<h2 id="velocity2.0">Velocity 2.0</h2>
 
 				<h3>Production</h3>
 				<ul>
@@ -80,7 +81,7 @@
 									<dt>Version:</dt>
 										<dd>2.0.21010.0</dd>
 									<dt>support:</dt>
-										<dd>support.address@citi.com <a href="mailto:#"></a></dd>
+										<dd>support.address@citi.com <a href="mailto:#" class="mail-icon">Send eMail →</a></dd>
 									<dt>Download:</dt>
 										<dd>
 											<a href="download#"  class="download-btn">
@@ -89,7 +90,7 @@
 											</a>
 										</dd>
 										<dd>
-											<a href="download#" class="download-btn">
+											<a href="download#" class="download-btn download-zip">
 												<span>Zip</span>
 												<div class="download-btn-icon icon-zip"></div>
 											</a>
@@ -170,7 +171,7 @@
 
 	</div> <!--frame-body-->
 
-	<div class="frame-foot"></div>
+	<div class="frame-foot">Copyright © Citigroup 2015</div>
 
 </div> <!--frame-->
 
@@ -182,8 +183,10 @@
 	    	$("#accordion").find(".accordion-toggle").click(function(){
 
 	      		//Expand or collapse this panel
+	    		$(this).addClass( "open" );	      		
 	    		$(this).next().addClass( "open" );
 
+	    		$(".accordion-toggle").not($(this)).removeClass( "open" );
 	    		$(".accordion-content").not($(this).next()).removeClass( "open" );
 
 	  		});
