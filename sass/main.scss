@@ -10,6 +10,31 @@
 $break-small: 400px;
 $frame-width: 610px;
 
+
+$download-height: 30px;
+
+// Colour Pallet
+
+$black: #010208;
+$white: #ffffff;
+
+$slate: #12151e;
+$slate-light: #1f262e;
+$slate-lighter: lighten($slate, 7%);
+$cyan: #5ad2f0;
+$cyan-dark: #1f556b;
+
+
+// Colour Abstraction
+
+$bg: $black;
+$bg-gradient: $slate-light;
+$panel-bg: $slate;
+$panel-head-bg: $slate-lighter;
+$link: $cyan;
+$link-hover: $cyan-dark;
+$text: $white;
+
 * {
 
 	@include css3-prefix (box-sizing, border-box);
@@ -27,8 +52,15 @@ html, body {
 	margin: 0;
 	padding: 0;
 	font-family: "Interstate", Tahoma, Verdana, Segoe, sans-serif;
-	background-color: #390b0b;
+	background-color: $bg;
+	color: $white;
 
+}
+a, a:visited {
+	color: $link;
+	&:hover {
+		color: $link-hover;
+	}
 }
 // body:before {
 // 	content: '';
@@ -75,12 +107,9 @@ html, body {
 	width: 100%;
 	max-width: $frame-width;
 	margin: 0px auto;
-	border-style: solid;
-	border-width: 1px;
-	@include css3-prefix (border-radius, 2px);
-	border-color: #6a6a6a;
-	background-color: #ffffff;
-	@include css3-prefix (box-shadow, 0px 5px 40px 0px rgba(0,0,0,0.45));
+	background-color: $bg;
+	box-shadow: 80px 0px 300px 0px rgba( $bg-gradient, .8), -80px 0px 300px 0px rgba( $bg-gradient, .8);
+
 	overflow: hidden;
 
 	@media screen and (min-width: $frame-width) {
@@ -91,29 +120,30 @@ html, body {
 
 .frame-head {
 
-	background-color: #e6e6e6;
 	text-align: center;
 	padding: 20px 0px 15px 0px;
-	border-bottom: 1px solid #6a6a6a;
+
+
 	img {
-		max-width:330px;
+		max-width:160px;
 		width: 80%;
+		float: left;
 	}
 	@media screen and (min-width: $break-small) {
 		padding: 40px 0px 30px 0px;
 
 	}
 }
+.title {
+	font-size: 24px;
+	margin: 0.8em 0em 0.4em 0em;
+
+}
 
 .frame-body {
 	padding: 0px 20px;
 }
 
-.body-title {
-	font-size: 24px;
-	margin: 0.8em 0em 0.4em 0em;
-	color: #b0b0b0;
-}
 
 .sidebar {
 	width: 100%;
@@ -126,8 +156,9 @@ html, body {
 
 }
 
-.downloads-list {
+.main-wrap {
 	width: 100%;
+
 
 	@media screen and (min-width: $frame-width) {
 		width: 67%;
@@ -135,46 +166,51 @@ html, body {
 	}
 
 }
-
-.contents-title {
+.panel {
+	background-color: $panel-bg;
+	padding-bottom: 1em;
+}
+.panel-head {
 	font-size: 18px;
-	color: #6a6a6a;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	background-color: $panel-head-bg;
+	margin: 0 0 1em 0;
+	padding: 0.4em;
+
+;
 }
 
 .contents-list {
 	list-style:none;
-	margin: 0.4em 0;
+	margin: 0;
 	padding: 0;
+	background-color: $panel-bg;
 }
 
 .contents-list li {
 	font-size: 12px;
-	margin: 0.4em 0;
-	padding: 0;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	margin: 0 0 0.8em 0;
+	padding: 0 0.8em;
 }
 
 .product {
 
 	h2 {
 	font-size: 28px;
-	border-bottom: 1px solid;
-	padding-bottom: 4px;
-	color: #404041;
 	}
 	h3 {
-		font-size: 14px;
-		letter-spacing: 0.04em;
-		padding: 0.1em 0.8em;
-		color: #ffffff;
-		background-color: #bcbdc0;
+		font-size: 18px;
+		
 	}
 	ul {
 		margin: 0px;
-		padding: 0px;
+		padding: 0 0 1em 0;
 		list-style: none;
 		li {
-			margin: 0px;
-			padding: 0px;
+
 		}
 	}
 }
@@ -263,19 +299,30 @@ html, body {
 		font-size: 20px;
 	}
 }
-.download-details {
-	dt {
-		font-size: 10px;
-		text-transform: uppercase;
-		color: #626262;
-		clear: both;
-	}
-	dd {
-		font-size: 14px;
-		margin: 0px 0px 0.6em 0px;
-		color: #1d1d1d;
-		float: left;
-	}
+h4 {
+	display: none;
+}
+
+.download {
+	vertical-align: middle;
+	margin-bottom: 1em;
+
+}
+.download-version {
+	float: left;
+	font-size: 14px;
+	width: 90px;
+	line-height: $download-height;
+
+		margin-right: 1em;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+
+}
+.download-link {
+	float: left;
+	width: 110px;
+	font-weight: normal;
 }
 
 .mail-icon {
@@ -316,15 +363,14 @@ html, body {
 }
 
 .download-btn {
-	margin: 0px 22px 0px 0px;
-	display: block;
-	font-size: 18px;
+	margin-right: 1em;
+	font-size: 14px;
 	@media screen and (min-width: $break-small) {
+		display: block;
+		height: $download-height;
+		line-height: $download-height;
 
-		height: 40px;
-		line-height: 40px;
-
-		padding: 0px 18px;
+		padding: 0 0.4em;
 		
 		text-decoration: none;
 		border-style: solid;
@@ -349,6 +395,7 @@ html, body {
 	}	
 }
 .download-btn-icon {
+	display: none;
 	@media screen and (min-width: $break-small) {
 		float: right;
 		width: 26px;

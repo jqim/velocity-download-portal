@@ -20,7 +20,13 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Interstate", Tahoma, Verdana, Segoe, sans-serif;
-  background-color: #390b0b; }
+  background-color: #010208;
+  color: #ffffff; }
+
+a, a:visited {
+  color: #5ad2f0; }
+  a:hover, a:visited:hover {
+    color: #1f556b; }
 
 .top-bar {
   display: none; }
@@ -47,46 +53,30 @@ html, body {
   width: 100%;
   max-width: 610px;
   margin: 0px auto;
-  border-style: solid;
-  border-width: 1px;
-  -webkit-border-radius: 2px;
-  -khtml-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
-  border-color: #6a6a6a;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.45);
-  -khtml-box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.45);
-  -ms-box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.45);
-  -o-box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.45);
-  box-shadow: 0px 5px 40px 0px rgba(0, 0, 0, 0.45);
+  background-color: #010208;
+  box-shadow: 80px 0px 300px 0px rgba(31, 38, 46, 0.8), -80px 0px 300px 0px rgba(31, 38, 46, 0.8);
   overflow: hidden; }
   @media screen and (min-width: 610px) {
     .frame {
       margin: 100px auto; } }
 
 .frame-head {
-  background-color: #e6e6e6;
   text-align: center;
-  padding: 20px 0px 15px 0px;
-  border-bottom: 1px solid #6a6a6a; }
+  padding: 20px 0px 15px 0px; }
   .frame-head img {
-    max-width: 330px;
-    width: 80%; }
+    max-width: 160px;
+    width: 80%;
+    float: left; }
   @media screen and (min-width: 400px) {
     .frame-head {
       padding: 40px 0px 30px 0px; } }
 
+.title {
+  font-size: 24px;
+  margin: 0.8em 0em 0.4em 0em; }
+
 .frame-body {
   padding: 0px 20px; }
-
-.body-title {
-  font-size: 24px;
-  margin: 0.8em 0em 0.4em 0em;
-  color: #b0b0b0; }
 
 .sidebar {
   width: 100%; }
@@ -96,45 +86,46 @@ html, body {
       float: left;
       padding-right: 20px; } }
 
-.downloads-list {
+.main-wrap {
   width: 100%; }
   @media screen and (min-width: 610px) {
-    .downloads-list {
+    .main-wrap {
       width: 67%;
       float: left; } }
 
-.contents-title {
+.panel {
+  background-color: #12151e;
+  padding-bottom: 1em; }
+
+.panel-head {
   font-size: 18px;
-  color: #6a6a6a; }
+  font-weight: normal;
+  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+  background-color: #1f2534;
+  margin: 0 0 1em 0;
+  padding: 0.4em; }
 
 .contents-list {
   list-style: none;
-  margin: 0.4em 0;
-  padding: 0; }
+  margin: 0;
+  padding: 0;
+  background-color: #12151e; }
 
 .contents-list li {
   font-size: 12px;
-  margin: 0.4em 0;
-  padding: 0; }
+  font-weight: normal;
+  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+  margin: 0 0 0.8em 0;
+  padding: 0 0.8em; }
 
 .product h2 {
-  font-size: 28px;
-  border-bottom: 1px solid;
-  padding-bottom: 4px;
-  color: #404041; }
+  font-size: 28px; }
 .product h3 {
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  padding: 0.1em 0.8em;
-  color: #ffffff;
-  background-color: #bcbdc0; }
+  font-size: 18px; }
 .product ul {
   margin: 0px;
-  padding: 0px;
+  padding: 0 0 1em 0;
   list-style: none; }
-  .product ul li {
-    margin: 0px;
-    padding: 0px; }
 
 .download-label {
   font-size: 11px;
@@ -213,16 +204,26 @@ html, body {
     .download-title {
       font-size: 20px; } }
 
-.download-details dt {
-  font-size: 10px;
-  text-transform: uppercase;
-  color: #626262;
-  clear: both; }
-.download-details dd {
+h4 {
+  display: none; }
+
+.download {
+  vertical-align: middle;
+  margin-bottom: 1em; }
+
+.download-version {
+  float: left;
   font-size: 14px;
-  margin: 0px 0px 0.6em 0px;
-  color: #1d1d1d;
-  float: left; }
+  width: 90px;
+  line-height: 30px;
+  margin-right: 1em;
+  font-weight: normal;
+  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif; }
+
+.download-link {
+  float: left;
+  width: 110px;
+  font-weight: normal; }
 
 .mail-icon {
   display: block;
@@ -261,14 +262,14 @@ html, body {
         background-position: 0px 0px; } }
 
 .download-btn {
-  margin: 0px 22px 0px 0px;
-  display: block;
-  font-size: 18px; }
+  margin-right: 1em;
+  font-size: 14px; }
   @media screen and (min-width: 400px) {
     .download-btn {
-      height: 40px;
-      line-height: 40px;
-      padding: 0px 18px;
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      padding: 0 0.4em;
       text-decoration: none;
       border-style: solid;
       border-width: 0px 0px 2px 0px;
@@ -291,21 +292,23 @@ html, body {
         .download-btn:hover > div {
           background-position-y: 0px; } }
 
-@media screen and (min-width: 400px) {
-  .download-btn-icon {
-    float: right;
-    width: 26px;
-    height: 22px;
-    margin: 8px -7px 0px 14px;
-    background-image: url("../img/dl-icon-sprite.png");
-    background-repeat: no-repeat;
-    transition: background-position 0.3s ease-out; }
-    .download-btn-icon.icon-exe {
-      background-position-x: -26px;
-      background-position-y: -24px; }
-    .download-btn-icon.icon-zip {
-      background-position-x: 0px;
-      background-position-y: -24px; } }
+.download-btn-icon {
+  display: none; }
+  @media screen and (min-width: 400px) {
+    .download-btn-icon {
+      float: right;
+      width: 26px;
+      height: 22px;
+      margin: 8px -7px 0px 14px;
+      background-image: url("../img/dl-icon-sprite.png");
+      background-repeat: no-repeat;
+      transition: background-position 0.3s ease-out; }
+      .download-btn-icon.icon-exe {
+        background-position-x: -26px;
+        background-position-y: -24px; }
+      .download-btn-icon.icon-zip {
+        background-position-x: 0px;
+        background-position-y: -24px; } }
 
 .frame-foot {
   font-size: 10px;
