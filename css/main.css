@@ -24,41 +24,16 @@ html, body {
   color: #ffffff; }
 
 a, a:visited {
-  color: #5ad2f0; }
+  color: #13abd1; }
   a:hover, a:visited:hover {
     color: #1f556b; }
-
-.top-bar {
-  display: none; }
-  @media screen and (min-width: 610px) {
-    .top-bar {
-      display: block;
-      height: 50px;
-      line-height: 50px;
-      background-color: #000000;
-      color: #ffffff; }
-      .top-bar header {
-        width: 100%;
-        max-width: 870px;
-        padding: 0 24px; }
-        .top-bar header h1 {
-          display: inline;
-          font-size: 14px; }
-        .top-bar header h2 {
-          display: inline;
-          font-size: 14px;
-          font-weight: lighter; } }
 
 .frame {
   width: 100%;
   max-width: 610px;
-  margin: 0px auto;
+  margin: 0 auto 100px auto;
   background-color: #010208;
-  box-shadow: 80px 0px 300px 0px rgba(31, 38, 46, 0.8), -80px 0px 300px 0px rgba(31, 38, 46, 0.8);
-  overflow: hidden; }
-  @media screen and (min-width: 610px) {
-    .frame {
-      margin: 100px auto; } }
+  box-shadow: 80px 0px 300px 0px rgba(31, 38, 46, 0.8), -80px 0px 300px 0px rgba(31, 38, 46, 0.8); }
 
 .frame-head {
   text-align: center;
@@ -72,8 +47,10 @@ a, a:visited {
       padding: 40px 0px 30px 0px; } }
 
 .title {
-  font-size: 24px;
-  margin: 0.8em 0em 0.4em 0em; }
+  font-size: 30px;
+  margin: 0.8em 0em 0.4em 0em;
+  font-weight: normal;
+  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif; }
 
 .frame-body {
   padding: 0px 20px; }
@@ -118,103 +95,44 @@ a, a:visited {
   margin: 0 0 0.8em 0;
   padding: 0 0.8em; }
 
-.product h2 {
-  font-size: 28px; }
-.product h3 {
-  font-size: 18px; }
-.product ul {
-  margin: 0px;
-  padding: 0 0 1em 0;
-  list-style: none; }
+.product {
+  background-color: #1f2534;
+  padding: 4px;
+  margin-bottom: 2em; }
+  .product h2 {
+    font-size: 36px;
+    font-weight: normal;
+    font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+    padding: 0.4em 0.4em;
+    margin: 0;
+    color: #ffffff; }
+  .product h3 {
+    font-size: 18px; }
 
-.download-label {
-  font-size: 11px;
-  cursor: pointer;
-  text-transform: uppercase;
-  color: #231f20;
-  margin: 0.4em 0em 0.8em 0em; }
-  .download-label:before {
-    content: "";
-    display: block;
-    float: left;
-    height: 7px;
-    width: 7px;
-    margin: 4px 6px 0px 0px;
-    background-image: url("../img/accordion-sprite.png");
-    background-repeat: none;
-    background-position: 0px 0px; }
-  .download-label.open:before {
-    background-position: -7px 0px; }
+.enviroment {
+  background-color: #02040c; }
 
-.download-frame {
-  -webkit-transition: height 0.2s ease-out;
-  -khtml-transition: height 0.2s ease-out;
-  -moz-transition: height 0.2s ease-out;
-  -ms-transition: height 0.2s ease-out;
-  -o-transition: height 0.2s ease-out;
-  transition: height 0.2s ease-out;
-  height: 0px;
-  overflow: hidden; }
-
-.download-frame.open {
-  display: block;
-  height: 200px;
-  padding: 0px 20px;
+.enviroment-head {
+  padding: 0.4em;
+  background-color: #12151e;
   border-style: solid;
-  border-width: 1px;
-  -webkit-border-radius: 2px;
-  -khtml-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
-  border-color: #d7d7d7;
-  background-color: #ededed; }
-
-.download_empty {
-  margin-top: 58px;
-  text-align: center; }
-  .download_empty span {
-    font-size: 18px; }
-  .download_empty p {
-    font-size: 14px;
-    font-weight: lighter; }
-
-.download_loading {
-  margin-top: 85px;
-  text-align: center; }
-  .download_loading span {
-    font-size: 18px; }
-
-.download_error {
-  margin-top: 58px;
-  text-align: center; }
-  .download_error span {
-    font-size: 18px;
-    color: #c21d1d; }
-  .download_error p {
-    font-size: 18px;
-    font-weight: lighter; }
-
-.download-title {
-  font-size: 16px;
-  margin: 0.8em -0.2em;
-  color: #1d1d1d; }
-  @media screen and (min-width: 400px) {
-    .download-title {
-      font-size: 20px; } }
-
-h4 {
-  display: none; }
+  border-width: 0 0 2px 0;
+  border-color: #1f2534; }
 
 .download {
   vertical-align: middle;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  padding-left: 1em; }
+
+.download-label {
+  display: none; }
 
 .download-version {
   float: left;
   font-size: 14px;
-  width: 90px;
+  text-align: right;
+  width: 26%;
+  min-width: 70px;
   line-height: 30px;
   margin-right: 1em;
   font-weight: normal;
@@ -222,7 +140,8 @@ h4 {
 
 .download-link {
   float: left;
-  width: 110px;
+  width: 30%;
+  min-width: 80px;
   font-weight: normal; }
 
 .mail-icon {
@@ -263,32 +182,27 @@ h4 {
 
 .download-btn {
   margin-right: 1em;
-  font-size: 14px; }
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: normal;
+  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif; }
   @media screen and (min-width: 400px) {
     .download-btn {
       display: block;
       height: 30px;
-      line-height: 30px;
       padding: 0 0.4em;
       text-decoration: none;
       border-style: solid;
-      border-width: 0px 0px 2px 0px;
-      border-color: #000000;
-      -webkit-border-radius: 4px;
-      -khtml-border-radius: 4px;
-      -moz-border-radius: 4px;
-      -ms-border-radius: 4px;
-      -o-border-radius: 4px;
-      border-radius: 4px;
-      background-color: #363636;
-      color: #e4e4e4;
+      border-width: 1px;
+      border-color: #13abd1;
+      color: #13abd1;
       clear: both;
       transition: background-color 0.2s ease; }
       .download-btn span {
         float: left; }
       .download-btn:hover {
         color: #ffffff;
-        background-color: #000000; }
+        background-color: #13abd1; }
         .download-btn:hover > div {
           background-position-y: 0px; } }
 

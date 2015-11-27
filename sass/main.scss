@@ -16,12 +16,13 @@ $download-height: 30px;
 // Colour Pallet
 
 $black: #010208;
+$blue-black: #02040c;
 $white: #ffffff;
 
 $slate: #12151e;
 $slate-light: #1f262e;
 $slate-lighter: lighten($slate, 7%);
-$cyan: #5ad2f0;
+$cyan: #13abd1;
 $cyan-dark: #1f556b;
 
 
@@ -31,8 +32,15 @@ $bg: $black;
 $bg-gradient: $slate-light;
 $panel-bg: $slate;
 $panel-head-bg: $slate-lighter;
+$enviroment-bg: $blue-black;
+$enviroment-head-bg: $slate;
+$product-bg: $slate-lighter;
+
 $link: $cyan;
 $link-hover: $cyan-dark;
+$button: $link;
+$button-border: darken($button, 16%);
+$button-hover: lighten($button, 20%);
 $text: $white;
 
 * {
@@ -73,57 +81,19 @@ a, a:visited {
 // 	background-color: blue;
 
 // }
-.top-bar {
-	display:none;
-	@media screen and (min-width: $frame-width) {
-	
-		display:block;
-		height:50px;
-		line-height: 50px;
-		background-color: #000000;
-		color: #ffffff;
 
-		header {
-			width: 100%;
-			max-width: 870px;
-			padding: 0 24px;
-
-			h1 {
-				display: inline;
-				font-size: 14px;
-			}
-
-			h2 {
-				display: inline;
-				font-size: 14px;
-				font-weight: lighter;
-			}			
-		}
-
-	}
-}
 
 .frame {
 	width: 100%;
 	max-width: $frame-width;
-	margin: 0px auto;
+	margin: 0 auto 100px auto;
 	background-color: $bg;
-	box-shadow: 80px 0px 300px 0px rgba( $bg-gradient, .8), -80px 0px 300px 0px rgba( $bg-gradient, .8);
-
-	overflow: hidden;
-
-	@media screen and (min-width: $frame-width) {
-		margin: 100px auto;
-	}
-
+	box-shadow:  80px 0px 300px 0px rgba( $bg-gradient, .8), 
+				-80px 0px 300px 0px rgba( $bg-gradient, .8);
 }
-
 .frame-head {
-
 	text-align: center;
 	padding: 20px 0px 15px 0px;
-
-
 	img {
 		max-width:160px;
 		width: 80%;
@@ -131,35 +101,29 @@ a, a:visited {
 	}
 	@media screen and (min-width: $break-small) {
 		padding: 40px 0px 30px 0px;
-
 	}
 }
+
 .title {
-	font-size: 24px;
+	font-size: 30px;
 	margin: 0.8em 0em 0.4em 0em;
-
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 }
-
 .frame-body {
 	padding: 0px 20px;
 }
 
-
 .sidebar {
 	width: 100%;
-
 	@media screen and (min-width: $frame-width) {
 		width: 33%;
 		float: left;
 		padding-right: 20px;
 	}
-
 }
-
 .main-wrap {
 	width: 100%;
-
-
 	@media screen and (min-width: $frame-width) {
 		width: 67%;
 		float: left;
@@ -177,9 +141,8 @@ a, a:visited {
 	background-color: $panel-head-bg;
 	margin: 0 0 1em 0;
 	padding: 0.4em;
-
-;
 }
+
 
 .contents-list {
 	list-style:none;
@@ -198,130 +161,56 @@ a, a:visited {
 
 .product {
 
+	background-color: $product-bg;
+	padding: 4px;
+	margin-bottom: 2em;
 	h2 {
-	font-size: 28px;
+	font-size: 36px;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	padding: 0.4em 0.4em;
+	margin: 0;
+	color: $text;
 	}
 	h3 {
 		font-size: 18px;
-		
 	}
-	ul {
-		margin: 0px;
-		padding: 0 0 1em 0;
-		list-style: none;
-		li {
+}
+.enviroment {
+	background-color: $enviroment-bg;
+}
+.enviroment-head {
 
-		}
-	}
-}
- 
-.download-label {
-	font-size: 11px;
-	cursor: pointer;
-	text-transform: uppercase; 
-	color: #231f20;
-	margin: 0.4em 0em 0.8em 0em;
-	&:before {
-		content: "";
-		display: block;
-		float: left;
-		height: 7px;
-		width: 7px;
-		margin: 4px 6px 0px 0px;
-		background-image:url('../img/accordion-sprite.png');
-		background-repeat: none;
-		background-position: 0px 0px;
-	}
-	&.open:before {
-		background-position: -7px 0px;
-	}
-}
-
-.download-frame {
-	@include css3-prefix (transition, height 0.2s ease-out);
-	height: 0px;
-	overflow: hidden;
-}
-.download-frame.open {
-	display: block;
-	height: 200px;
-	padding: 0px 20px;
+	padding: 0.4em;
+	background-color: $enviroment-head-bg;
 	border-style: solid;
-	border-width: 1px;
-	@include css3-prefix (border-radius, 2px);
-	border-color: #d7d7d7;
-	background-color: #ededed;
+	border-width:  0 0 2px 0 ;
+	border-color: $product-bg;
 }
-
-
-.download_empty {
-	margin-top: 58px;
-	text-align: center;
-	span {
-		font-size: 18px;
-	}
-	p {
-		font-size: 14px;
-		font-weight: lighter;
-	}
-
-}
-.download_loading {
-	margin-top: 85px;
-	text-align: center;
-	span {
-		font-size: 18px;
-	}
-
-}
-.download_error {
-	margin-top: 58px;
-	text-align: center;
-	span {
-		font-size: 18px;
-		color: #c21d1d;
-	}
-	p {
-		font-size: 18px;
-		font-weight: lighter;
-	}
-
-}
-.download_ideal {
-
-}
-.download-title {
-	font-size: 16px;
-	margin: 0.8em -0.2em;
-	color: #1d1d1d;
-
-	@media screen and (min-width: $break-small) {
-		font-size: 20px;
-	}
-}
-h4 {
-	display: none;
-}
-
 .download {
 	vertical-align: middle;
 	margin-bottom: 1em;
-
+	padding-left: 1em;
+}
+.download-label {
+	display: none;
 }
 .download-version {
 	float: left;
 	font-size: 14px;
-	width: 90px;
+	text-align: right;
+	width: 26%;
+	min-width: 70px;
 	line-height: $download-height;
-
-		margin-right: 1em;
+	margin-right: 1em;
 	font-weight: normal;
 	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 
 }
 .download-link {
 	float: left;
-	width: 110px;
+	width: 30%;
+	min-width: 80px;
 	font-weight: normal;
 }
 
@@ -365,20 +254,20 @@ h4 {
 .download-btn {
 	margin-right: 1em;
 	font-size: 14px;
+	line-height: $download-height;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 	@media screen and (min-width: $break-small) {
 		display: block;
 		height: $download-height;
-		line-height: $download-height;
-
 		padding: 0 0.4em;
-		
 		text-decoration: none;
 		border-style: solid;
-		border-width: 0px 0px 2px 0px;
-		border-color: #000000;
-		@include css3-prefix (border-radius, 4px);
-		background-color: #363636;
-		color: #e4e4e4;
+		border-width:1px;
+		border-color: $button;
+		// @include css3-prefix (border-radius, 2px);
+		// background-color: $button;
+		color: $button;
 		clear: both;
 		transition: background-color 0.2s ease;
 
@@ -386,8 +275,8 @@ h4 {
 			float: left;
 		}
 		&:hover {
-			color: #ffffff;
-			background-color: #000000;
+			color: $text;
+			background-color: $button;
 			> div {
 				background-position-y: 0px;
 			}
