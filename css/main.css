@@ -24,13 +24,13 @@ html, body {
   color: #ffffff; }
 
 a, a:visited {
-  color: #13abd1; }
+  color: #0095da; }
   a:hover, a:visited:hover {
     color: #1f556b; }
 
 .frame {
   width: 100%;
-  max-width: 610px;
+  max-width: 680px;
   margin: 0 auto 100px auto;
   background-color: #010208;
   box-shadow: 80px 0px 300px 0px rgba(31, 38, 46, 0.8), -80px 0px 300px 0px rgba(31, 38, 46, 0.8); }
@@ -47,7 +47,7 @@ a, a:visited {
       padding: 40px 0px 30px 0px; } }
 
 .title {
-  font-size: 30px;
+  font-size: 36px;
   margin: 0.8em 0em 0.4em 0em;
   font-weight: normal;
   font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif; }
@@ -57,7 +57,7 @@ a, a:visited {
 
 .sidebar {
   width: 100%; }
-  @media screen and (min-width: 610px) {
+  @media screen and (min-width: 680px) {
     .sidebar {
       width: 33%;
       float: left;
@@ -65,7 +65,7 @@ a, a:visited {
 
 .main-wrap {
   width: 100%; }
-  @media screen and (min-width: 610px) {
+  @media screen and (min-width: 680px) {
     .main-wrap {
       width: 67%;
       float: left; } }
@@ -75,7 +75,7 @@ a, a:visited {
   padding-bottom: 1em; }
 
 .panel-head {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: normal;
   font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
   background-color: #1f2534;
@@ -89,7 +89,7 @@ a, a:visited {
   background-color: #12151e; }
 
 .contents-list li {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: normal;
   font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
   margin: 0 0 0.8em 0;
@@ -100,7 +100,7 @@ a, a:visited {
   padding: 4px;
   margin-bottom: 2em; }
   .product h2 {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: normal;
     font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
     padding: 0.4em 0.4em;
@@ -116,7 +116,7 @@ a, a:visited {
   padding: 0.4em;
   background-color: #12151e;
   border-style: solid;
-  border-width: 0 0 2px 0;
+  border-width: 4px 0 1px 0;
   border-color: #1f2534; }
 
 .download {
@@ -128,19 +128,23 @@ a, a:visited {
   display: none; }
 
 .download-version {
-  float: left;
   font-size: 14px;
-  text-align: right;
-  width: 26%;
-  min-width: 70px;
-  line-height: 30px;
-  margin-right: 1em;
   font-weight: normal;
-  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif; }
+  font-family: monospace; }
+  @media screen and (min-width: 400px) {
+    .download-version {
+      float: left;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-align: right;
+      width: 30%;
+      min-width: 70px;
+      line-height: 30px;
+      margin-right: 1em; } }
 
 .download-link {
   float: left;
-  width: 30%;
+  width: 28%;
   min-width: 80px;
   font-weight: normal; }
 
@@ -194,15 +198,15 @@ a, a:visited {
       text-decoration: none;
       border-style: solid;
       border-width: 1px;
-      border-color: #13abd1;
-      color: #13abd1;
+      border-color: #0095da;
+      color: #0095da;
       clear: both;
       transition: background-color 0.2s ease; }
       .download-btn span {
         float: left; }
       .download-btn:hover {
         color: #ffffff;
-        background-color: #13abd1; }
+        background-color: #0095da; }
         .download-btn:hover > div {
           background-position-y: 0px; } }
 

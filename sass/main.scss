@@ -8,7 +8,7 @@
 }
 
 $break-small: 400px;
-$frame-width: 610px;
+$frame-width: 680px;
 
 
 $download-height: 30px;
@@ -22,7 +22,7 @@ $white: #ffffff;
 $slate: #12151e;
 $slate-light: #1f262e;
 $slate-lighter: lighten($slate, 7%);
-$cyan: #13abd1;
+$cyan: #0095da;
 $cyan-dark: #1f556b;
 
 
@@ -105,7 +105,7 @@ a, a:visited {
 }
 
 .title {
-	font-size: 30px;
+	font-size: 36px;
 	margin: 0.8em 0em 0.4em 0em;
 	font-weight: normal;
 	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
@@ -135,7 +135,7 @@ a, a:visited {
 	padding-bottom: 1em;
 }
 .panel-head {
-	font-size: 18px;
+	font-size: 22px;
 	font-weight: normal;
 	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 	background-color: $panel-head-bg;
@@ -152,7 +152,7 @@ a, a:visited {
 }
 
 .contents-list li {
-	font-size: 12px;
+	font-size: 16px;
 	font-weight: normal;
 	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 	margin: 0 0 0.8em 0;
@@ -165,7 +165,7 @@ a, a:visited {
 	padding: 4px;
 	margin-bottom: 2em;
 	h2 {
-	font-size: 36px;
+	font-size: 28px;
 	font-weight: normal;
 	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 	padding: 0.4em 0.4em;
@@ -184,7 +184,7 @@ a, a:visited {
 	padding: 0.4em;
 	background-color: $enviroment-head-bg;
 	border-style: solid;
-	border-width:  0 0 2px 0 ;
+	border-width:  4px 0 1px 0 ;
 	border-color: $product-bg;
 }
 .download {
@@ -196,20 +196,24 @@ a, a:visited {
 	display: none;
 }
 .download-version {
-	float: left;
 	font-size: 14px;
-	text-align: right;
-	width: 26%;
-	min-width: 70px;
-	line-height: $download-height;
-	margin-right: 1em;
 	font-weight: normal;
-	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	font-family: monospace;
+	@media screen and (min-width: $break-small) {
+		float: left;
+		font-size: 14px;
+		letter-spacing: 0.1em;
+		text-align: right;
+		width: 30%;
+		min-width: 70px;
+		line-height: $download-height;
+		margin-right: 1em;
 
+	}
 }
 .download-link {
 	float: left;
-	width: 30%;
+	width: 28%;
 	min-width: 80px;
 	font-weight: normal;
 }
