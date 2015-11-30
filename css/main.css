@@ -37,20 +37,24 @@ a, a:visited {
 
 .frame-head {
   text-align: center;
-  padding: 20px 0px 15px 0px; }
+  padding: 20px 0px; }
   .frame-head img {
-    max-width: 160px;
-    width: 80%;
-    float: left; }
+    width: 137px;
+    float: left;
+    margin: 20px; }
   @media screen and (min-width: 400px) {
     .frame-head {
-      padding: 40px 0px 30px 0px; } }
+      padding: 30px 0px; } }
 
 .title {
-  font-size: 36px;
-  margin: 0.8em 0em 0.4em 0em;
+  clear: both;
+  font-size: 24px;
+  margin: 1.8em 0em 0.4em 0em;
   font-weight: normal;
   font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif; }
+  @media screen and (min-width: 400px) {
+    .title {
+      font-size: 36px; } }
 
 .frame-body {
   padding: 0px 20px; }
@@ -121,8 +125,11 @@ a, a:visited {
 
 .download {
   vertical-align: middle;
-  margin-bottom: 1em;
+  margin-bottom: 1.4em;
   padding-left: 1em; }
+  @media screen and (min-width: 400px) {
+    .download {
+      margin-bottom: 1em; } }
 
 .download-label {
   display: none; }
@@ -130,7 +137,8 @@ a, a:visited {
 .download-version {
   font-size: 14px;
   font-weight: normal;
-  font-family: monospace; }
+  font-family: monospace;
+  clear: left; }
   @media screen and (min-width: 400px) {
     .download-version {
       float: left;
