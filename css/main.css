@@ -28,6 +28,21 @@ a, a:visited {
   a:hover, a:visited:hover {
     color: #1f556b; }
 
+.publicBackground {
+  background-image: url("../img/public-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  height: 100%; }
+
+.publicFrame {
+  max-width: 1400px;
+  padding: 8em 1em 1em 1em;
+  margin: auto; }
+
+.publicPanel {
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.1); }
+
 .frame {
   width: 100%;
   max-width: 880px;
