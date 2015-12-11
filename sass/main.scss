@@ -79,24 +79,113 @@ a, a:visited {
 // 	width: $break-small;
 // 	height: 480px;
 // 	background-color: blue;
-
 // }
 
-.publicBackground {
-	background-image: url("../img/public-background.jpg");
-	background-repeat: no-repeat;
-	background-position: center top;
-	height: 100%;
+.notransition {
+	-webkit-transition: none !important;
+	transition: none !important;
+	
 }
+.download-btn-large.state-shrink {
+	-webkit-transform: scaleY(0.3);
+	transform: scaleY(0.3);
+	cursor: default;
+	.btn-lable {
+
+		opacity: 0;
+	}
+}
+
+.download-btn-large {
+	margin-right: 1em;
+	cursor: pointer;
+	
+	font-size: 14px;
+	line-height: $download-height;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	@media screen and (min-width: $break-small) {
+		background-color: transparent;
+		font-size: 24px;
+		width: 100%;
+		display: block;
+		line-height: 40px;
+		height: 40px;
+		padding: 0 0.4em;
+		text-decoration: none;
+		border-style: solid;
+		border-width:1px;
+		border-color: $button;
+		// @include css3-prefix (border-radius, 2px);
+		// background-color: $button;
+		color: $button;
+		clear: both;
+		position: relative;
+		transition: background-color 0.2s ease-in,
+					color 0.2s ease-in,
+					transform 0.1s ease-out;
+
+		span {
+			float: left;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			color: rgba($text,0.8);
+			background-color: rgba($button, 0.2);
+			> div {
+				background-position-y: 0px;
+			}
+		}
+	}	
+}
+
+.bar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background-color: $button;
+	width: 0%;
+	transition: width 0.6s ease-in;
+
+	&.state-download {
+		width: 100%;
+
+	}
+}
+.readyText {
+	position: absolute;
+	right: 0;
+	top: 30px;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	text-transform: uppercase;
+	color: rgba($button, 0.6);
+	
+}
+
+ .publicBackground {
+ 	background-image: url("../img/public-background.jpg");
+ 	background-repeat: no-repeat;
+ 	background-position: center top;
+ 	height: 100%;
+ }
 .publicFrame {
 	max-width:1400px;
 	padding: 8em 1em 1em 1em;
 	margin: auto;
+
 }
 .publicPanel {
 	max-width:400px;
-	background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba($text, 0.2);
+	padding: 40px;
 
+}
+.publicDownload-link {
+		position: relative;
 }
 .frame {
 	width: 100%;
@@ -282,6 +371,7 @@ a, a:visited {
 }
 
 .download-btn {
+
 	margin-right: 1em;
 	font-size: 14px;
 	line-height: $download-height;
@@ -299,7 +389,8 @@ a, a:visited {
 		// background-color: $button;
 		color: $button;
 		clear: both;
-		transition: background-color 0.2s ease;
+		position: relative;
+		transition: background-color 0.2s ease, transform 0.3s ease;
 
 		span {
 			float: left;

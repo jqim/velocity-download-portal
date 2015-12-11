@@ -7,6 +7,8 @@
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
+<!-- 		<link rel="stylesheet" type="text/css" href="css/component.css" /> -->
+		<script src="js/modernizr.custom.js"></script>
 </head>
 
 <body>
@@ -17,10 +19,17 @@
 			<div class="publicPanel cf">
 				<h2 class="panel-head">Download Velocity</h2>
 						<div class="publicDownload-link">
-							<a href="download#" class="download-btn">
-								<span>Installer</span>
-								<div class="download-btn-icon icon-exe"></div>
-							</a>
+							<!-- <div id="progressBar" class="bar notransition"></div> -->
+						<!-- 	<button class="progress-button" data-style="shrink" data-horizontal onclick="progressBarSim(amountLoaded)">Submit</button>
+
+							<button  onclick="loadingDownload(amountLoaded)">Submit</button> -->
+
+							<button onclick="loadingDownload()" id="dlBtn" class="download-btn-large">
+								<span class="btn-lable">Download</span>
+									<div id="progressBar" class="bar notransition"></div>
+									
+							</button>
+							<span id="ready" class="readyText"></span>
 						</div>
 			</div>
 
@@ -31,7 +40,51 @@
 
 </div> <!--frame-->
 
+		<script src="js/classie.js"></script>
+		<script src="js/progressButton.js"></script>
+		<script>
+function progressBarSim(al) {
+	var bar = document.getElementById ('progressBar');
 
+	bar.style.width = al+"%";
+	al++;
+	var sim = setTimeout("progressBarSim("+al+")", 3);
+	if(al == 100) {
+		bar.style.width = "100%";
+		clearTimeout (sim);
+	}
+}
+var amountLoaded = 0;
+
+	function loadingDownload(al) {
+		var bar = document.getElementById ('progressBar');
+		var bttn = document.getElementById ('dlBtn');
+
+		// add class state-loading to the button (applies a specific transform to the button depending which data-style is defined - defined in the stylesheets)
+		classie.remove( bar, 'notransition');
+		classie.add( bttn, 'state-shrink' );
+
+		var timerOne = setTimeout(keyframeTwo, 600);
+
+		function keyframeTwo() {
+			classie.add( bar, 'state-download' );
+			
+			var timerTwo = setTimeout(keyframeThree, 600);
+		};
+		function keyframeThree () {
+		document.getElementById ('ready').innerHTML ="Downloading";
+		// var timerTwo = setTimeout(keyframeFour, 4000);
+		};
+		function keyframeFour () {
+				document.getElementById ('ready').innerHTML ="";
+				classie.remove( bttn, 'state-shrink');
+				classie.remove( bar, 'state-download');
+				classie.add( bar, 'notransition')	
+		};
+
+	};
+
+		</script>
 </body>
 
 

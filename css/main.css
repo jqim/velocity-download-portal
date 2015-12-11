@@ -28,6 +28,71 @@ a, a:visited {
   a:hover, a:visited:hover {
     color: #1f556b; }
 
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important; }
+
+.download-btn-large.state-shrink {
+  -webkit-transform: scaleY(0.3);
+  transform: scaleY(0.3);
+  cursor: default; }
+  .download-btn-large.state-shrink .btn-lable {
+    opacity: 0; }
+
+.download-btn-large {
+  margin-right: 1em;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: normal;
+  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif; }
+  @media screen and (min-width: 400px) {
+    .download-btn-large {
+      background-color: transparent;
+      font-size: 24px;
+      width: 100%;
+      display: block;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 0.4em;
+      text-decoration: none;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #0095da;
+      color: #0095da;
+      clear: both;
+      position: relative;
+      transition: background-color 0.2s ease-in, color 0.2s ease-in, transform 0.1s ease-out; }
+      .download-btn-large span {
+        float: left; }
+      .download-btn-large:focus {
+        outline: none; }
+      .download-btn-large:hover {
+        color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(0, 149, 218, 0.2); }
+        .download-btn-large:hover > div {
+          background-position-y: 0px; } }
+
+.bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #0095da;
+  width: 0%;
+  transition: width 0.6s ease-in; }
+  .bar.state-download {
+    width: 100%; }
+
+.readyText {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  font-weight: normal;
+  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+  text-transform: uppercase;
+  color: rgba(0, 149, 218, 0.6); }
+
 .publicBackground {
   background-image: url("../img/public-background.jpg");
   background-repeat: no-repeat;
@@ -41,7 +106,11 @@ a, a:visited {
 
 .publicPanel {
   max-width: 400px;
-  background-color: rgba(255, 255, 255, 0.1); }
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 40px; }
+
+.publicDownload-link {
+  position: relative; }
 
 .frame {
   width: 100%;
@@ -227,7 +296,8 @@ a, a:visited {
       border-color: #0095da;
       color: #0095da;
       clear: both;
-      transition: background-color 0.2s ease; }
+      position: relative;
+      transition: background-color 0.2s ease, transform 0.3s ease; }
       .download-btn span {
         float: left; }
       .download-btn:hover {
