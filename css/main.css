@@ -49,13 +49,12 @@ a, a:visited {
   @media screen and (min-width: 400px) {
     .download-btn-large {
       background-color: transparent;
-      font-size: 24px;
+      font-size: 200%;
       width: 100%;
       display: block;
-      line-height: 40px;
-      height: 40px;
-      padding: 0 0.4em;
-      margin-bottom: 60px;
+      line-height: 2.4em;
+      padding: 0 0.8em;
+      margin-bottom: 2.4em;
       text-decoration: none;
       border-style: solid;
       border-width: 1px;
@@ -96,11 +95,11 @@ a, a:visited {
   width: 100%; }
   @media screen and (min-width: 400px) {
     .publicBackground {
-      padding: 120px 90px 120px 90px; } }
+      padding: 120px 10% 120px 10%; } }
 
 .publicFrame {
   position: relative;
-  max-width: 500px;
+  max-width: 800px;
   padding: 0;
   margin: 0 auto; }
 
@@ -122,26 +121,27 @@ a, a:visited {
 .publicDownload-link {
   position: relative;
   z-index: 100;
-  padding: 40px 40px 0px 40px;
+  padding: 4% 6% 1% 6%;
   background-color: #12151e;
   background-color: rgba(1, 2, 8, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.2); }
 
 .publicPanel-head {
-  margin: 1em 2em 2em 0;
+  margin: 4% 50% 8% 0;
   white-space: nowrap;
   overflow: hidden;
   background-image: url("../img/logo.svg");
-  background-position: 50%;
+  background-position: 0;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -khtml-background-size: cover;
   -moz-background-size: cover;
   -ms-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  max-height: 400px;
-  max-width: 400px; }
+  background-size: cover; }
+
+.no-svg .publicPanel-head {
+  background-color: pink; }
 
 .publicPanel-head:before {
   content: "";
@@ -151,8 +151,8 @@ a, a:visited {
 
 .readyText {
   position: absolute;
-  right: 40px;
-  bottom: 92px;
+  right: 6%;
+  bottom: 33%;
   font-weight: normal;
   font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
   text-transform: uppercase;

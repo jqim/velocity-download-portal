@@ -106,13 +106,13 @@ a, a:visited {
 	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 	@media screen and (min-width: $break-small) {
 		background-color: transparent;
-		font-size: 24px;
+		font-size: 200%;
 		width: 100%;
 		display: block;
-		line-height: 40px;
-		height: 40px;
-		padding: 0 0.4em;
-		margin-bottom: 60px;
+		line-height: 2.4em;
+
+		padding: 0 0.8em;
+		margin-bottom: 2.4em;
 		text-decoration: none;
 		border-style: solid;
 		border-width:1px;
@@ -168,12 +168,12 @@ a, a:visited {
  	height: 100%;
  	width: 100%;
  	@media screen and (min-width: $break-small) {
-		 padding: 120px 90px 120px 90px;
+		 padding: 120px 10% 120px 10%;
 	}
  }
 .publicFrame {
 	position: relative;
-	max-width: 500px;
+	max-width: 800px;
 	padding: 0;
 	margin: 0 auto;
 }
@@ -197,7 +197,7 @@ a, a:visited {
 .publicDownload-link {
 	position: relative;
 	z-index: 100;
-	padding: 40px 40px 0px 40px;
+	padding:  4% 6% 1% 6%;
  	// margin: 1em auto;
  	background-color: $panel-bg;
 	background-color: rgba($bg, 0.6);
@@ -205,16 +205,17 @@ a, a:visited {
 
 }
 .publicPanel-head {
-	margin: 1em 2em 2em 0;
+	margin: 4% 50% 8% 0;
 	white-space: nowrap;
 	overflow: hidden;
 	background-image: url('../img/logo.svg');
-	background-position: 50%;
+	background-position: 0;
   	background-repeat: no-repeat;
 	@include css3-prefix (background-size, cover);
-	max-height: 400px;
-	max-width: 400px;
+}
 
+.no-svg .publicPanel-head {
+	background-color:pink;
 }
 .publicPanel-head:before {
   content: "";
@@ -224,8 +225,8 @@ a, a:visited {
 }
 .readyText {
 	position: absolute;
-	right: 40px;
-	bottom: 92px;
+	right: 6%;
+	bottom: 33%;
 	font-weight: normal;
 	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 	text-transform: uppercase;
