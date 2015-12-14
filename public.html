@@ -1,4 +1,4 @@
-<html>
+<html class="no-js">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- JS -->
@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 <!-- 		<link rel="stylesheet" type="text/css" href="css/component.css" /> -->
-		<script src="js/modernizr.custom.js"></script>
+		<script src="js/modernizr-custom.js"></script>
 </head>
 
 <body>
@@ -16,32 +16,27 @@
 <div class="publicBackground">
 
 	<div class="publicFrame">	
-			<div class="publicPanel cf">
-				<h2 class="panel-head">Download Velocity</h2>
-						<div class="publicDownload-link">
-							<!-- <div id="progressBar" class="bar notransition"></div> -->
-						<!-- 	<button class="progress-button" data-style="shrink" data-horizontal onclick="progressBarSim(amountLoaded)">Submit</button>
-
-							<button  onclick="loadingDownload(amountLoaded)">Submit</button> -->
-
-							<button onclick="loadingDownload()" id="dlBtn" class="download-btn-large">
-								<span class="btn-lable">Download</span>
-									<div id="progressBar" class="bar notransition"></div>
-									
-							</button>
-							<span id="ready" class="readyText"></span>
-						</div>
+			<div class="publicPanel"></div>
+			<div class="publicDownload-link">
+				<div class="publicPanel-head"></div>
+				<button onclick="loadingDownload()" id="dlBtn" class="download-btn-large">
+					<span class="btn-lable">Download Velocity 2.0</span>
+					<div id="progressBar" class="bar notransition"></div>
+				</button>
+				<span id="ready" class="readyText"></span>
+				<div class="frame-foot">Copyright &copy; Citigroup 2015</div>
 			</div>
+
 
 	</div>
 
 
-	<div class="frame-foot">Copyright &copy; Citigroup 2015</div>
+
 
 </div> <!--frame-->
 
 		<script src="js/classie.js"></script>
-		<script src="js/progressButton.js"></script>
+
 		<script>
 function progressBarSim(al) {
 	var bar = document.getElementById ('progressBar');

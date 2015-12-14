@@ -55,6 +55,7 @@ a, a:visited {
       line-height: 40px;
       height: 40px;
       padding: 0 0.4em;
+      margin-bottom: 60px;
       text-decoration: none;
       border-style: solid;
       border-width: 1px;
@@ -84,33 +85,78 @@ a, a:visited {
   .bar.state-download {
     width: 100%; }
 
-.readyText {
-  position: absolute;
-  right: 0;
-  top: 30px;
-  font-weight: normal;
-  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
-  text-transform: uppercase;
-  color: rgba(0, 149, 218, 0.6); }
-
 .publicBackground {
   background-image: url("../img/public-background.jpg");
   background-repeat: no-repeat;
   background-position: center top;
-  height: 100%; }
+  margin-right: auto;
+  margin-left: auto;
+  padding: 70px 10px 120px 10px;
+  height: 100%;
+  width: 100%; }
+  @media screen and (min-width: 400px) {
+    .publicBackground {
+      padding: 120px 90px 120px 90px; } }
 
 .publicFrame {
-  max-width: 1400px;
-  padding: 8em 1em 1em 1em;
-  margin: auto; }
+  position: relative;
+  max-width: 500px;
+  padding: 0;
+  margin: 0 auto; }
 
 .publicPanel {
-  max-width: 400px;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 40px; }
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+  overflow: hidden;
+  background-image: url("../img/public-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center -120px;
+  -webkit-filter: blur(10px);
+  filter: url("/img/blur-3bb5549379e48593f5a3d3d76fbbd074.svg#blur");
+  filter: blur(10px); }
 
 .publicDownload-link {
-  position: relative; }
+  position: relative;
+  z-index: 100;
+  padding: 40px 40px 0px 40px;
+  background-color: #12151e;
+  background-color: rgba(1, 2, 8, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2); }
+
+.publicPanel-head {
+  margin: 1em 2em 2em 0;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url("../img/logo.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -khtml-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  max-height: 400px;
+  max-width: 400px; }
+
+.publicPanel-head:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-bottom: 11.2%; }
+
+.readyText {
+  position: absolute;
+  right: 40px;
+  bottom: 92px;
+  font-weight: normal;
+  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+  text-transform: uppercase;
+  color: rgba(0, 149, 218, 0.6); }
 
 .frame {
   width: 100%;
@@ -325,10 +371,14 @@ a, a:visited {
         background-position-y: -24px; } }
 
 .frame-foot {
+  width: 100%;
+  max-width: 880px;
   font-size: 10px;
-  margin-top: 4em;
-  padding: 1em 2em;
+  margin: 1em auto 1.4em auto;
+  padding: 1em 0;
+  font-weight: normal;
+  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
   text-align: right;
-  color: #6a6a6a; }
+  color: #ffffff; }
 
 /*# sourceMappingURL=main.css.map */
