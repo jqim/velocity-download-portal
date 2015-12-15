@@ -39,15 +39,20 @@ a, a:visited {
   .download-btn-large.state-shrink .btn-lable {
     opacity: 0; }
 
-.download-btn-large {
-  margin-right: 1em;
+.js .publicLinkFallback {
+  display: none; }
+
+.no-js .download-btn-large {
+  display: none; }
+
+.js .download-btn-large {
+  display: block;
   cursor: pointer;
-  font-size: 14px;
-  line-height: 30px;
-  font-weight: normal;
-  font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif; }
-  @media screen and (min-width: 400px) {
-    .download-btn-large {
+  font-size: 14px; }
+  @media screen and (min-width: 680px) {
+    .js .download-btn-large {
+      font-weight: normal;
+      font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
       background-color: transparent;
       font-size: 200%;
       width: 100%;
@@ -63,26 +68,25 @@ a, a:visited {
       clear: both;
       position: relative;
       transition: background-color 0.2s ease-in, color 0.2s ease-in, transform 0.1s ease-out; }
-      .download-btn-large span {
-        float: left; }
-      .download-btn-large:focus {
+      .js .download-btn-large:focus {
         outline: none; }
-      .download-btn-large:hover {
+      .js .download-btn-large:hover {
         color: rgba(255, 255, 255, 0.8);
         background-color: rgba(0, 149, 218, 0.2); }
-        .download-btn-large:hover > div {
+        .js .download-btn-large:hover > div {
           background-position-y: 0px; } }
 
-.bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background-color: #0095da;
-  width: 0%;
-  transition: width 0.6s ease-in; }
-  .bar.state-download {
-    width: 100%; }
+@media screen and (min-width: 680px) {
+  .bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #0095da;
+    width: 0%;
+    transition: width 0.6s ease-in; }
+    .bar.state-download {
+      width: 100%; } }
 
 .publicBackground {
   background-image: url("../img/public-background.jpg");
@@ -141,7 +145,7 @@ a, a:visited {
   background-size: cover; }
 
 .no-svg .publicPanel-head {
-  background-color: pink; }
+  background-image: url("../img/velocity-logo-small-white.png"); }
 
 .publicPanel-head:before {
   content: "";

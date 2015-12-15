@@ -95,16 +95,20 @@ a, a:visited {
 		opacity: 0;
 	}
 }
-
-.download-btn-large {
-	margin-right: 1em;
+.js .publicLinkFallback {
+	display:none;
+}
+.no-js .download-btn-large {
+	display:none;
+}
+.js .download-btn-large {
+	display: block;
 	cursor: pointer;
-	
 	font-size: 14px;
-	line-height: $download-height;
-	font-weight: normal;
-	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
-	@media screen and (min-width: $break-small) {
+	
+	@media screen and (min-width: $frame-width) {
+		font-weight: normal;
+		font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 		background-color: transparent;
 		font-size: 200%;
 		width: 100%;
@@ -127,7 +131,7 @@ a, a:visited {
 					transform 0.1s ease-out;
 
 		span {
-			float: left;
+			// float: left;
 		}
 		&:focus {
 			outline: none;
@@ -143,17 +147,19 @@ a, a:visited {
 }
 
 .bar {
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	background-color: $button;
-	width: 0%;
-	transition: width 0.6s ease-in;
+	@media screen and (min-width: $frame-width) {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		background-color: $button;
+		width: 0%;
+		transition: width 0.6s ease-in;
 
-	&.state-download {
-		width: 100%;
+		&.state-download {
+			width: 100%;
 
+		}
 	}
 }
 
@@ -215,7 +221,7 @@ a, a:visited {
 }
 
 .no-svg .publicPanel-head {
-	background-color:pink;
+	background-image: url('../img/velocity-logo-small-white.png');
 }
 .publicPanel-head:before {
   content: "";
