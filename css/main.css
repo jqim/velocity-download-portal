@@ -17,6 +17,7 @@
   clear: both; }
 
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Interstate", Tahoma, Verdana, Segoe, sans-serif;
@@ -64,6 +65,7 @@ a, a:visited {
       border-style: solid;
       border-width: 1px;
       border-color: #0095da;
+      background-color: #010208;
       color: #0095da;
       clear: both;
       position: relative;
@@ -88,50 +90,37 @@ a, a:visited {
     .bar.state-download {
       width: 100%; } }
 
-.publicBackground, .publicPanel {
-  background-image: url("../img/public-background-01.jpg");
-  background-repeat: no-repeat; }
+@media screen and (min-width: 680px) {
+  .js.svg.mediaqueries .publicBackground {
+    background-image: url("../img/public-background-01.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom; } }
 
 .publicBackground {
-  background-position: center bottom;
   margin-right: auto;
   margin-left: auto;
-  padding: 70px 10px 120px 10px;
   height: 100%;
   width: 100%; }
-  @media screen and (min-width: 400px) {
-    .publicBackground {
-      padding: 120px 10% 120px 10%; } }
 
 .publicFrame {
-  position: relative;
-  max-width: 800px;
-  padding: 0;
-  margin: 0 auto; }
+  margin: 2em; }
 
-.publicPanel {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  z-index: 99;
-  overflow: hidden;
-  background-position: center -120px;
-  -webkit-filter: blur(6px);
-  filter: url("/img/blur-3bb5549379e48593f5a3d3d76fbbd074.svg#blur");
-  filter: blur(6px); }
+@media screen and (min-width: 680px) {
+  .js.svg.mediaqueries .publicFrame {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 0;
+    margin: 0 auto; } }
 
 .publicDownload-link {
-  position: relative;
-  z-index: 100;
-  padding: 4% 6% 1% 6%;
-  background-color: #0b141d;
-  background-color: rgba(11, 20, 29, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.2); }
+  z-index: 100; }
 
 .publicPanel-head {
-  margin: 4% 50% 8% 0;
+  margin: 2em;
+  width: 200px;
   white-space: nowrap;
   overflow: hidden;
   background-image: url("../img/logo.svg");
@@ -143,8 +132,14 @@ a, a:visited {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  @media screen and (min-width: 680px) {
+    .publicPanel-head {
+      position: fixed;
+      top: 40px;
+      left: 40px; } }
 
 .no-svg .publicPanel-head {
+  position: static;
   background-image: url("../img/velocity-logo-small-white.png"); }
 
 .publicPanel-head:before {
