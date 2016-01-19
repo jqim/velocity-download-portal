@@ -8,7 +8,40 @@
 }
 
 $break-small: 400px;
-$frame-width: 610px;
+$frame-width: 680px;
+
+
+$download-height: 30px;
+
+// Colour Pallet
+
+$black: #010208;
+$blue-black: #02040c;
+$white: #ffffff;
+
+$slate: #12151e;
+$slate-light: #1f262e;
+$slate-lighter: lighten($slate, 7%);
+$cyan: #0095da;
+$cyan-dark: #1f556b;
+
+
+// Colour Abstraction
+
+$bg: $black;
+$bg-gradient: $slate-light;
+$panel-bg: $slate;
+$panel-head-bg: $slate-lighter;
+$enviroment-bg: $blue-black;
+$enviroment-head-bg: $slate;
+$product-bg: $slate-lighter;
+
+$link: $cyan;
+$link-hover: $cyan-dark;
+$button: $link;
+$button-border: darken($button, 16%);
+$button-hover: lighten($button, 20%);
+$text: $white;
 
 * {
 
@@ -24,11 +57,19 @@ $frame-width: 610px;
     clear: both;
 }
 html, body {
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	font-family: "Interstate", Tahoma, Verdana, Segoe, sans-serif;
-	background-color: #390b0b;
+	background-color: $bg;
+	color: $white;
 
+}
+a, a:visited {
+	color: $link;
+	&:hover {
+		color: $link-hover;
+	}
 }
 // body:before {
 // 	content: '';
@@ -39,243 +80,302 @@ html, body {
 // 	width: $break-small;
 // 	height: 480px;
 // 	background-color: blue;
-
 // }
-.top-bar {
-	display:none;
-	@media screen and (min-width: $frame-width) {
+
+.notransition {
+	-webkit-transition: none !important;
+	transition: none !important;
 	
-		display:block;
-		height:50px;
-		line-height: 50px;
-		background-color: #000000;
-		color: #ffffff;
+}
+.download-btn-large.state-shrink {
+	-webkit-transform: scaleY(0.3);
+	transform: scaleY(0.3);
+	cursor: default;
+	.btn-lable {
 
-		header {
-			width: 100%;
-			max-width: 870px;
-			padding: 0 24px;
+		opacity: 0;
+	}
+}
+.js .publicLinkFallback {
+	display:none;
+}
+.no-js .download-btn-large {
+	display:none;
+}
+.js .download-btn-large {
+	display: block;
+	cursor: pointer;
+	font-size: 14px;
+	
+	@media screen and (min-width: $frame-width) {
+		font-weight: normal;
+		font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+		background-color: transparent;
+		font-size: 200%;
+		width: 100%;
+		display: block;
+		line-height: 2.4em;
 
-			h1 {
-				display: inline;
-				font-size: 14px;
-			}
+		padding: 0 0.8em;
+		margin-bottom: 2.4em;
+		text-decoration: none;
+		border-style: solid;
+		border-width:1px;
+		border-color: $button;
+		// @include css3-prefix (border-radius, 2px);
+		background-color: $black;
+		color: $button;
+		clear: both;
+		position: relative;
+		transition: background-color 0.2s ease-in,
+					color 0.2s ease-in,
+					transform 0.1s ease-out;
 
-			h2 {
-				display: inline;
-				font-size: 14px;
-				font-weight: lighter;
-			}			
+		span {
+			// float: left;
 		}
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			color: rgba($text,0.8);
+			background-color: rgba($button, 0.2);
+			> div {
+				background-position-y: 0px;
+			}
+		}
+	}	
+}
 
+.bar {
+	@media screen and (min-width: $frame-width) {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		background-color: $button;
+		width: 0%;
+		transition: width 0.6s ease-in;
+
+		&.state-download {
+			width: 100%;
+
+		}
+	}
+}
+.js.svg.mediaqueries .publicBackground {
+	@media screen and (min-width: $frame-width) {
+		background-image: url("../img/public-background-01.jpg");
+		background-repeat: no-repeat;
+		background-position: center bottom;
+	}
+}
+.publicBackground {
+	margin-right: auto;
+	margin-left: auto;
+	height: 100%;
+	width: 100%;
+ }
+ .publicFrame {
+ 	margin: 2em;
+ }
+.js.svg.mediaqueries .publicFrame {
+	@media screen and (min-width: $frame-width) {
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+  	width: 80%;
+	max-width: 800px;
+	padding: 0;
+	margin: 0 auto;
 	}
 }
 
+.publicDownload-link {
+	z-index: 100;
+}
+
+.publicPanel-head {
+	margin:2em; 
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	background-image: url('../img/logo.svg');
+	background-position: 0;
+  	background-repeat: no-repeat;
+	@include css3-prefix (background-size, cover);
+	@media screen and (min-width: $frame-width) {
+		position: fixed;
+		top: 40px;
+		left: 40px;
+	}
+}
+
+.no-svg .publicPanel-head {
+	position: static;
+	
+	background-image: url('../img/velocity-logo-small-white.png');
+}
+.publicPanel-head:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-bottom: 11.2%;
+}
+.readyText {
+	position: absolute;
+	right: 6%;
+	bottom: 33%;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	text-transform: uppercase;
+	color: rgba($button, 0.6);
+	
+}
 .frame {
 	width: 100%;
-	max-width: $frame-width;
-	margin: 0px auto;
-	border-style: solid;
-	border-width: 1px;
-	@include css3-prefix (border-radius, 2px);
-	border-color: #6a6a6a;
-	background-color: #ffffff;
-	@include css3-prefix (box-shadow, 0px 5px 40px 0px rgba(0,0,0,0.45));
-	overflow: hidden;
-
+	max-width: 880px;
+	margin: 0 auto 100px auto;
+	background-color: $bg;
 	@media screen and (min-width: $frame-width) {
-		margin: 100px auto;
+		box-shadow:  80px 0px 300px 0px rgba( $bg-gradient, .8), 
+					-80px 0px 300px 0px rgba( $bg-gradient, .8);
 	}
-
 }
-
 .frame-head {
-
-	background-color: #e6e6e6;
 	text-align: center;
-	padding: 20px 0px 15px 0px;
-	border-bottom: 1px solid #6a6a6a;
+	padding: 20px 0px;
 	img {
-		max-width:330px;
-		width: 80%;
+		width:137px;
+		float: left;
+		margin: 20px 30px;
 	}
 	@media screen and (min-width: $break-small) {
-		padding: 40px 0px 30px 0px;
-
+		padding: 30px 0px;
 	}
 }
 
+.title {
+	clear: both;
+	font-size: 24px;
+	margin: 1.8em 0em 0.4em 0em;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	@media screen and (min-width: $break-small) {
+		font-size: 36px;
+	}
+}
 .frame-body {
 	padding: 0px 20px;
 }
 
-.body-title {
-	font-size: 24px;
-	margin: 0.8em 0em 0.4em 0em;
-	color: #b0b0b0;
-}
-
 .sidebar {
 	width: 100%;
-
+	margin-bottom: 20px;
 	@media screen and (min-width: $frame-width) {
 		width: 33%;
 		float: left;
 		padding-right: 20px;
 	}
-
 }
-
-.downloads-list {
+.main-wrap {
 	width: 100%;
-
 	@media screen and (min-width: $frame-width) {
 		width: 67%;
 		float: left;
 	}
 
 }
-
-.contents-title {
-	font-size: 18px;
-	color: #6a6a6a;
+.panel {
+	background-color: $panel-bg;
+	padding-bottom: 1em;
 }
+.panel-head {
+	font-size: 22px;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	background-color: $panel-head-bg;
+	margin: 0 0 1em 0;
+	padding: 0.4em;
+}
+
 
 .contents-list {
 	list-style:none;
-	margin: 0.4em 0;
+	margin: 0;
 	padding: 0;
+	background-color: $panel-bg;
 }
 
 .contents-list li {
-	font-size: 12px;
-	margin: 0.4em 0;
-	padding: 0;
+	font-size: 16px;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	margin: 0 0 0.8em 0;
+	padding: 0 0.8em;
 }
 
 .product {
 
+	background-color: $product-bg;
+	padding: 4px;
+	margin-bottom: 2em;
 	h2 {
 	font-size: 28px;
-	border-bottom: 1px solid;
-	padding-bottom: 4px;
-	color: #404041;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
+	padding: 0.4em 0.4em;
+	margin: 0;
+	color: $text;
 	}
 	h3 {
-		font-size: 14px;
-		letter-spacing: 0.04em;
-		padding: 0.1em 0.8em;
-		color: #ffffff;
-		background-color: #bcbdc0;
-	}
-	ul {
-		margin: 0px;
-		padding: 0px;
-		list-style: none;
-		li {
-			margin: 0px;
-			padding: 0px;
-		}
+		font-size: 18px;
 	}
 }
- 
-.download-label {
-	font-size: 11px;
-	cursor: pointer;
-	text-transform: uppercase; 
-	color: #231f20;
-	margin: 0.4em 0em 0.8em 0em;
-	&:before {
-		content: "";
-		display: block;
-		float: left;
-		height: 7px;
-		width: 7px;
-		margin: 4px 6px 0px 0px;
-		background-image:url('../img/accordion-sprite.png');
-		background-repeat: none;
-		background-position: 0px 0px;
-	}
-	&.open:before {
-		background-position: -7px 0px;
-	}
+.enviroment {
+	background-color: $enviroment-bg;
 }
+.enviroment-head {
 
-.download-frame {
-	@include css3-prefix (transition, height 0.2s ease-out);
-	height: 0px;
-	overflow: hidden;
-}
-.download-frame.open {
-	display: block;
-	height: 200px;
-	padding: 0px 20px;
+	padding: 0.4em;
+	background-color: $enviroment-head-bg;
 	border-style: solid;
-	border-width: 1px;
-	@include css3-prefix (border-radius, 2px);
-	border-color: #d7d7d7;
-	background-color: #ededed;
+	border-width:  4px 0 1px 0 ;
+	border-color: $product-bg;
 }
-
-
-.download_empty {
-	margin-top: 58px;
-	text-align: center;
-	span {
-		font-size: 18px;
-	}
-	p {
-		font-size: 14px;
-		font-weight: lighter;
-	}
-
-}
-.download_loading {
-	margin-top: 85px;
-	text-align: center;
-	span {
-		font-size: 18px;
-	}
-
-}
-.download_error {
-	margin-top: 58px;
-	text-align: center;
-	span {
-		font-size: 18px;
-		color: #c21d1d;
-	}
-	p {
-		font-size: 18px;
-		font-weight: lighter;
-	}
-
-}
-.download_ideal {
-
-}
-.download-title {
-	font-size: 16px;
-	margin: 0.8em -0.2em;
-	color: #1d1d1d;
-
+.download {
+	vertical-align: middle;
+	margin-bottom: 1.4em;
+	padding-left: 1em;
 	@media screen and (min-width: $break-small) {
-		font-size: 20px;
+		margin-bottom: 1em;
 	}
 }
-.download-details {
-	dt {
-		font-size: 10px;
-		text-transform: uppercase;
-		color: #626262;
-		clear: both;
-	}
-	dd {
-		font-size: 14px;
-		margin: 0px 0px 0.6em 0px;
-		color: #1d1d1d;
+.download-label {
+	display: none;
+}
+.download-version {
+	font-size: 14px;
+	font-weight: normal;
+	font-family: monospace;
+	clear: left;
+	@media screen and (min-width: $break-small) {
 		float: left;
+		font-size: 14px;
+		letter-spacing: 0.1em;
+		text-align: right;
+		width: 30%;
+		min-width: 70px;
+		line-height: $download-height;
+		margin-right: 1em;
+
 	}
+}
+.download-link {
+	float: left;
+	width: 28%;
+	min-width: 80px;
+	font-weight: normal;
 }
 
 .mail-icon {
@@ -316,32 +416,33 @@ html, body {
 }
 
 .download-btn {
-	margin: 0px 22px 0px 0px;
-	display: block;
-	font-size: 18px;
+
+	margin-right: 1em;
+	font-size: 14px;
+	line-height: $download-height;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 	@media screen and (min-width: $break-small) {
-
-		height: 40px;
-		line-height: 40px;
-
-		padding: 0px 18px;
-		
+		display: block;
+		height: $download-height;
+		padding: 0 0.4em;
 		text-decoration: none;
 		border-style: solid;
-		border-width: 0px 0px 2px 0px;
-		border-color: #000000;
-		@include css3-prefix (border-radius, 4px);
-		background-color: #363636;
-		color: #e4e4e4;
+		border-width:1px;
+		border-color: $button;
+		// @include css3-prefix (border-radius, 2px);
+		// background-color: $button;
+		color: $button;
 		clear: both;
-		transition: background-color 0.2s ease;
+		position: relative;
+		transition: background-color 0.2s ease, transform 0.3s ease;
 
 		span {
 			float: left;
 		}
 		&:hover {
-			color: #ffffff;
-			background-color: #000000;
+			color: $text;
+			background-color: $button;
 			> div {
 				background-position-y: 0px;
 			}
@@ -349,6 +450,7 @@ html, body {
 	}	
 }
 .download-btn-icon {
+	display: none;
 	@media screen and (min-width: $break-small) {
 		float: right;
 		width: 26px;
@@ -369,9 +471,13 @@ html, body {
 
 }
 .frame-foot {
+	width: 100%;
+	max-width: 880px;
 	font-size: 10px;
-	margin-top: 4em;
-	padding: 1em 2em;
+	margin: 1em auto 1.4em auto;
+	padding: 1em 0;
+	font-weight: normal;
+	font-family: "Interstate ExtraLight", Tahoma, Verdana, Segoe, sans-serif;
 	text-align: right;
-	color: #6a6a6a;
+	color: $text;
 }
